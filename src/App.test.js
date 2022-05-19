@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import App from './App';
 
 test('the counter starts at 0', () => {
@@ -20,6 +20,22 @@ test('plus Btn has correct text "plus"', () => {
   render(<App />);
   const plusBtn = screen.getByTestId('plusBtn');
   expect(plusBtn).toHaveTextContent('+');
+});
+
+test('when the plus btn is pressed, the counter number changes to 1', () => {
+  render(<App />);
+  const btnElement = screen.getByTestId('plusBtn');
+  fireEvent.click(btnElement);
+  const counterEl = screen.getByTestId('counter');
+  expect(counterEl).toHaveTextContent('1');
+});
+
+test('when the minus btn is pressed, the counter number changes to -1', () => {
+  render(<App />);
+  const btnElement = screen.getByTestId('minusBtn');
+  fireEvent.click(btnElement);
+  const counterEl = screen.getByTestId('counter');
+  expect(counterEl).toHaveTextContent('-1');
 });
 
 // 기본적으로 되어있는 구조.
