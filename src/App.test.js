@@ -38,6 +38,12 @@ test('when the minus btn is pressed, the counter number changes to -1', () => {
   expect(counterEl).toHaveTextContent('-1');
 });
 
+test('on and off btn has blue background color', () => {
+  render(<App />);
+  const btnElement = screen.getByTestId('onOffBtn');
+  expect(btnElement).toHaveStyle({ backgroundColor: 'blue' });
+});
+
 // 기본적으로 되어있는 구조.
 // test('renders learn react link', () => {
 //   render(<App />);
