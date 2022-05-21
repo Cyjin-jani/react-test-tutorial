@@ -44,6 +44,16 @@ test('on and off btn has blue background color', () => {
   expect(btnElement).toHaveStyle({ backgroundColor: 'blue' });
 });
 
+test('make disable plus and minus btn when onOffbtn is clicked', () => {
+  render(<App />);
+  const onOffbtnElement = screen.getByTestId('onOffBtn');
+  fireEvent.click(onOffbtnElement);
+  const plusElement = screen.getByTestId('plusBtn');
+  const minusElement = screen.getByTestId('minusBtn');
+  expect(plusElement).toBeDisabled();
+  expect(minusElement).toBeDisabled();
+});
+
 // 기본적으로 되어있는 구조.
 // test('renders learn react link', () => {
 //   render(<App />);
