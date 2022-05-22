@@ -64,3 +64,26 @@ test('make disable plus and minus btn when onOffbtn is clicked', () => {
 //   // const lintTest = screen.getByRole('button', { name: 'lintTest' });
 //   // expect(lintTest).toHaveTextContent('lintTest');
 // });
+
+/**
+ *
+ * testing library의 query에 대해... (getBy***)
+ */
+
+// getByTestId는 사실 getbyRole이나 getByText로 사용할 수 없는 최후의 경우 사용한다.
+
+/**
+ *
+ * userEvent에 대해
+ */
+
+/**
+ * userEvent는 fireEvent를 사용해서 만들어졌다.
+ * 엘리먼트 타입에 따라서 클릭 시 그에 맞는 적절한 반응을 보여준다.
+ *
+ * 예를 들어, fireEvent로 버튼을 클릭한다면,
+ * 즉, fireEvent.click(button)이라면, focus되는 효과는 발생하지 않으나,
+ * userEvent.click을 이용하면 버튼이 focus가 된다.
+ * 이렇게 실제 사용하는 유저의 버튼 클릭 행위와 거의 동일하게 테스팅이 될 수 있도록 해준다.
+ * 그러므로 fireEvent보다는 userEvent를 사용하는 것이 더 적합한 테스팅 방법이 된다.
+ */
